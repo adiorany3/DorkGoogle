@@ -7,8 +7,8 @@ st.title("Google Dork File Search Generator")
 
 st.markdown("""
 ### How to Use:
-1. Select one or more file extensions from the list (e.g., pdf, docx).
-2. Enter optional keywords to refine the search.
+1. Enter optional keywords to refine the search.
+2. Select one or more file extensions from the list (e.g., pdf, docx).
 3. Click the "Search on Google" button to open search results in a new tab.
 4. Use the "Reset" button to clear all inputs and start over.
 """)
@@ -21,11 +21,11 @@ if 'reset' in st.session_state and st.session_state.reset:
     st.session_state.keyword = ""
     st.session_state.reset = False
 
-# Input for file extensions
-exts = st.multiselect("Select file extensions", ["pdf", "doc", "docx", "xls", "xlsx", "ppt", "pptx", "txt", "jpg", "jpeg", "png", "gif", "mp3", "mp4", "avi", "zip", "rar", "exe"], key="exts")
-
 # Optional input for keywords
 keyword = st.text_input("Keywords (optional)", "", key="keyword")
+
+# Input for file extensions
+exts = st.multiselect("Select file extensions", ["pdf", "doc", "docx", "xls", "xlsx", "ppt", "pptx", "txt", "jpg", "jpeg", "png", "gif", "mp3", "mp4", "avi", "zip", "rar", "exe"], key="exts")
 
 # Tombol Reset
 if st.button("Reset"):
@@ -35,12 +35,14 @@ if st.button("Reset"):
 if exts:
     # Build query
     if len(exts) == 1:
-        query_parts = [f"filetype:{exts[0]}"]
+        base_query = f"filetype:{exts[0]}"
     else:
-        query_parts = [f"{' OR '.join([f'filetype:{e}' for e in exts])}"]
+        base_query = f"({' OR '.join([f'filetype:{e}' for e in exts])})"
+    
     if keyword:
-        query_parts.append(keyword)
-    query = " ".join(query_parts)
+        query = f"{base_query} {keyword}"
+    else:
+        query = base_query
     
     st.code(query)
     
