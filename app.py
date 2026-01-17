@@ -23,15 +23,15 @@ st.write("Select file extensions and enter keywords to generate a Google Dork qu
 
 # Handle reset
 if 'reset' in st.session_state and st.session_state.reset:
-    st.session_state.exts = ["pdf"]
-    st.session_state.keyword = "magazine"
+    st.session_state.exts = ["pdf", "pptx", "doc"]
+    st.session_state.keyword = "magazine 2026"
     st.session_state.reset = False
 
 # Optional input for keywords
 keyword = st.text_input("Keywords (optional)", "magazine 2026", key="keyword")
 
 # Input for file extensions
-exts = st.multiselect("Select file extensions", ["pdf", "doc", "docx", "xls", "xlsx", "ppt", "pptx", "txt", "jpg", "jpeg", "png", "gif", "mp3", "mp4", "avi", "zip", "rar", "exe"], default=["pdf"], key="exts")
+exts = st.multiselect("Select file extensions", ["pdf", "doc", "docx", "xls", "xlsx", "ppt", "pptx", "txt", "jpg", "jpeg", "png", "gif", "mp3", "mp4", "avi", "zip", "rar", "exe"], default=["pdf", "pptx", "doc"], key="exts")
 
 # Tombol Reset
 if st.button("Reset"):
