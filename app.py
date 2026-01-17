@@ -5,6 +5,12 @@ st.set_page_config(page_title="Google Dork File Search Generator", page_icon="ðŸ
 
 st.title("Google Dork File Search Generator")
 
+st.info("""
+This is an interactive web application built with Streamlit that generates Google Dork queries to help you search for files with specific extensions on Google. 
+It allows you to select file types and add optional keywords to create precise search queries. 
+Version: 1.0 | Developed for educational purposes.
+""")
+
 st.markdown("""
 ### How to Use:
 1. Enter optional keywords to refine the search.
@@ -17,15 +23,15 @@ st.write("Select file extensions and enter keywords to generate a Google Dork qu
 
 # Handle reset
 if 'reset' in st.session_state and st.session_state.reset:
-    st.session_state.exts = []
-    st.session_state.keyword = ""
+    st.session_state.exts = ["pdf"]
+    st.session_state.keyword = "magazine"
     st.session_state.reset = False
 
 # Optional input for keywords
-keyword = st.text_input("Keywords (optional)", "", key="keyword")
+keyword = st.text_input("Keywords (optional)", "magazine", key="keyword")
 
 # Input for file extensions
-exts = st.multiselect("Select file extensions", ["pdf", "doc", "docx", "xls", "xlsx", "ppt", "pptx", "txt", "jpg", "jpeg", "png", "gif", "mp3", "mp4", "avi", "zip", "rar", "exe"], key="exts")
+exts = st.multiselect("Select file extensions", ["pdf", "doc", "docx", "xls", "xlsx", "ppt", "pptx", "txt", "jpg", "jpeg", "png", "gif", "mp3", "mp4", "avi", "zip", "rar", "exe"], default=["pdf"], key="exts")
 
 # Tombol Reset
 if st.button("Reset"):
