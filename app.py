@@ -28,7 +28,7 @@ if 'reset' in st.session_state and st.session_state.reset:
     st.session_state.reset = False
 
 # Optional input for keywords
-keyword = st.text_input("Keywords (optional)", "magazine", key="keyword")
+keyword = st.text_input("Keywords (optional)", "magazine 2026", key="keyword")
 
 # Input for file extensions
 exts = st.multiselect("Select file extensions", ["pdf", "doc", "docx", "xls", "xlsx", "ppt", "pptx", "txt", "jpg", "jpeg", "png", "gif", "mp3", "mp4", "avi", "zip", "rar", "exe"], default=["pdf"], key="exts")
