@@ -1,57 +1,57 @@
 # 🔍 Google Dork File Search Generator
 
-Aplikasi web interaktif berbasis Streamlit untuk menghasilkan query Google Dork yang membantu Anda mencari file dengan ekstensi tertentu di Google. Dengan desain yang menarik dan user-friendly, aplikasi ini memudahkan pengguna untuk membuat query pencarian lanjutan.
+An interactive web application based on Streamlit to generate Google Dork queries that help you search for files with specific extensions on Google. With an attractive and user-friendly design, this application makes it easy for users to create advanced search queries.
 
-## ✨ Fitur Utama
+## ✨ Main Features
 
-- **Pemilihan Ekstensi File**: Pilih satu atau lebih ekstensi file dari daftar lengkap (pdf, docx, xlsx, dll.) melalui sidebar.
-- **Kata Kunci Opsional**: Tambahkan kata kunci untuk menyempurnakan pencarian.
-- **Query Otomatis**: Hasilkan query Google Dork secara otomatis dengan format yang benar.
-- **Tombol Pencarian**: Klik tombol untuk langsung membuka hasil pencarian di Google di tab baru.
-- **Desain Menarik**: UI dengan gradient background, emoji, dan styling custom untuk pengalaman yang lebih baik.
-- **Responsive**: Layout yang rapi dengan sidebar untuk input dan tampilan utama untuk hasil.
+- **File Extension Selection**: Select one or more file extensions from a complete list (pdf, docx, xlsx, etc.) via the sidebar.
+- **Optional Keywords**: Add keywords to refine the search.
+- **Automatic Query Generation**: Automatically generate Google Dork queries in the correct format.
+- **Search Button**: Click the button to directly open search results on Google in a new tab.
+- **Attractive Design**: UI with gradient background, emojis, and custom styling for a better experience.
+- **Responsive**: Clean layout with sidebar for input and main display for results.
 
-## 🚀 Cara Menjalankan
+## 🚀 How to Run
 
-### Persyaratan Sistem
+### System Requirements
 - Python 3.7+
 - Streamlit
 
-### Instalasi
-1. Clone atau download repository ini.
+### Installation
+1. Clone or download this repository.
 2. Install dependencies:
    ```bash
    pip install -r requirements.txt
    ```
-3. Jalankan aplikasi:
+3. Run the application:
    ```bash
    streamlit run app.py
    ```
-4. Buka browser dan akses `http://localhost:8501`.
+4. Open your browser and access `http://localhost:8501`.
 
 ## 📋 Requirements
 
-- `streamlit` - Framework untuk aplikasi web interaktif.
+- `streamlit` - Framework for interactive web applications.
 
-## 🛠️ Penggunaan
+## 🛠️ Usage
 
-1. Di sidebar, pilih ekstensi file yang ingin dicari.
-2. (Opsional) Masukkan kata kunci terkait.
-3. Query akan muncul secara otomatis.
-4. Klik tombol "Cari di Google" untuk melihat hasil.
+1. In the sidebar, select the file extensions you want to search for.
+2. (Optional) Enter related keywords.
+3. The query will appear automatically.
+4. Click the "Search on Google" button to view the results.
 
-## 🎨 Desain
+## 🎨 Design
 
-Aplikasi ini menggunakan CSS custom untuk:
-- Background gradient yang elegan.
-- Tombol dengan warna merah dan efek hover.
-- Input fields dengan transparansi.
-- Kode query dengan highlight warna emas.
+This application uses custom CSS for:
+- Elegant gradient background.
+- Buttons with red color and hover effects.
+- Input fields with transparency.
+- Query code with gold highlight.
 
-## 📄 Lisensi
+## 📄 License
 
-Proyek ini dikembangkan untuk tujuan edukasi.
+This project is developed for educational purposes.
 
 ## 👨‍💻 Development
 
-Development by Galuh Adi Insani © 2026
+Developed by Galuh Adi Insani © 2026

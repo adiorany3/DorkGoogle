@@ -6,14 +6,14 @@ st.set_page_config(page_title="Google Dork File Search Generator", page_icon="�
 st.title("Google Dork File Search Generator")
 
 st.markdown("""
-### Cara Penggunaan:
-1. Pilih satu atau lebih ekstensi file dari daftar (misalnya: pdf, docx).
-2. Masukkan kata kunci opsional untuk menyempurnakan pencarian.
-3. Klik tombol "Cari di Google" untuk membuka hasil pencarian di tab baru.
-4. Gunakan tombol "Reset" untuk menghapus semua input dan memulai ulang.
+### How to Use:
+1. Select one or more file extensions from the list (e.g., pdf, docx).
+2. Enter optional keywords to refine the search.
+3. Click the "Search on Google" button to open search results in a new tab.
+4. Use the "Reset" button to clear all inputs and start over.
 """)
 
-st.write("Pilih ekstensi file dan masukkan kata kunci untuk menghasilkan query Google Dork.")
+st.write("Select file extensions and enter keywords to generate a Google Dork query.")
 
 # Handle reset
 if 'reset' in st.session_state and st.session_state.reset:
@@ -21,11 +21,11 @@ if 'reset' in st.session_state and st.session_state.reset:
     st.session_state.keyword = ""
     st.session_state.reset = False
 
-# Input untuk ekstensi file
-exts = st.multiselect("Pilih ekstensi file", ["pdf", "doc", "docx", "xls", "xlsx", "ppt", "pptx", "txt", "jpg", "jpeg", "png", "gif", "mp3", "mp4", "avi", "zip", "rar", "exe"], key="exts")
+# Input for file extensions
+exts = st.multiselect("Select file extensions", ["pdf", "doc", "docx", "xls", "xlsx", "ppt", "pptx", "txt", "jpg", "jpeg", "png", "gif", "mp3", "mp4", "avi", "zip", "rar", "exe"], key="exts")
 
-# Input opsional untuk kata kunci
-keyword = st.text_input("Kata kunci (opsional)", "", key="keyword")
+# Optional input for keywords
+keyword = st.text_input("Keywords (optional)", "", key="keyword")
 
 # Tombol Reset
 if st.button("Reset"):
@@ -33,7 +33,7 @@ if st.button("Reset"):
     st.rerun()
 
 if exts:
-    # Bangun query
+    # Build query
     if len(exts) == 1:
         query_parts = [f"filetype:{exts[0]}"]
     else:
@@ -46,10 +46,10 @@ if exts:
     
     # Tautan ke Google sebagai tombol
     google_url = f"https://www.google.com/search?q={query.replace(' ', '+')}"
-    st.markdown(f'<a href="{google_url}" target="_blank"><button style="background-color: #4CAF50; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer;">Cari di Google</button></a>', unsafe_allow_html=True)
+    st.markdown(f'<a href="{google_url}" target="_blank"><button style="background-color: #4CAF50; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer;">Search on Google</button></a>', unsafe_allow_html=True)
 else:
-    st.write("Pilih setidaknya satu ekstensi file untuk memulai.")
+    st.write("Select at least one file extension to start.")
 
 st.write("---")
 tahun = datetime.datetime.now().year
-st.write(f"Developed by Galuh Adi Insani © {tahun}")
+st.markdown(f"Developed by Galuh Adi Insani © {tahun} | [search book](https://caribuku.streamlit.app/)")
